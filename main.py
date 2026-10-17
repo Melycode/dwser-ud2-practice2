@@ -1,6 +1,10 @@
+import math
+
 # 1. Crea una función greet() que imprima “Hello world” por consola. 
 def greet():
     print("Hello world")
+
+greet()
 
 #2. Crea una función greet(name) que imprima “Hello <nombre>” por consola, 
 #y llámala varias veces con distintos nombres. 
@@ -9,45 +13,31 @@ def greet1(name):
     print(f"Hello {name}")
 
 greet1("Antonio")
-greet1("Akemi")
-greet1("Milan")
-
 
 def greet2(name):
     return f"Hello {name}"
 
 print(greet2("José Antonio"))
-print(greet2("Akemi Guadalupe"))
-print(greet2("Milan Adrián"))
-
 
 #3. Crea una función pow(a, b) que devuelva el resultado de a elevado a la b
+
 def pow(a,b):
-    print(a**b)
-pow(2,3) 
-
-
-def pow1(a,b):
     return a**b 
 
-print(pow1(2,3)) 
-
+print(pow(2,3)) 
 
 #4. Crea una función celsius_to_fahrenheit(temperature) que transforme 
 #Celsius en Fahrenheit y devuelva el resultado. 
 def celsius_to_fahrenheit(temperature):
         return (temperature * 1.8) + 32 #esta fórmula siempre es para convertir C a F
 
-print(celsius_to_fahrenheit(0))
-print(celsius_to_fahrenheit(20))
-
+print(f'Son {celsius_to_fahrenheit(25)} ºF')
 
 #5. Crea una función area_circle(radius) que devuelva el área de un círculo. 
 def area_circle(radius):
-    return (radius **2) * 3.1416
+    return math.pi * (radius **2) 
 
 print(area_circle(3))
-print(area_circle(6))
 
 #6. Crea una función avg(a, b, c) que devuelva la media de tres números a, b y c. 
 def avg(a,b,c):
@@ -88,7 +78,7 @@ introduction("Frida", "Carnero", "De Guerrero", 1953)
 #11. Crea una función welcome() que imprima “Welcome to this Python lesson” 
 #por consola. 
 def welcome():
-    print(f"Welcome to this Python lesson")
+    print("Welcome to this Python lesson")
 
 welcome()
 
@@ -101,14 +91,14 @@ welcome1("Melissa")
 
 #13. Crea una función double(number) que devuelva el doble de un número. 
 def double(number):
-    return(number * 2)
+    return 2 * number
 
 print(double(2))
 
 #14. Crea una función price_with_tax(price) que devuelva el precio de un 
 #producto sumándole el IVA (21%). 
 def price_with_tax(price):
-    return price + (price * 0.21) #también price * 1.21 es mejor x ser corto
+    return price + price * 0.21 / 100 
 
 print(price_with_tax(10))
 
@@ -116,7 +106,7 @@ print(price_with_tax(10))
 #15. Crea una función price_with_tax(price, tax) que devuelva el precio de un 
 #producto sumándole el impuesto dado como parámetro. 
 def price_with_tax1(price, tax):
-    return price + (price * tax) 
+    return price + price * tax / 100 
 
 print(price_with_tax1(20,0.18))
 
@@ -157,8 +147,7 @@ print(format_name("Melissa", "Guerrero Carnero" ))
 #20. Crea una función passed(grade1, grade2, grade3) que calcule la media de 
 #tres notas y devuelva True o False, según si la media es mayor o igual que 5. 
 def passed(grade1, grade2, grade3):
-    average = (grade1 + grade2 + grade3) / 3
-    return average >= 5
+    return (grade1 + grade2 + grade3) / 3 >= 5
 
 print(passed(9, 6, 8))
 
